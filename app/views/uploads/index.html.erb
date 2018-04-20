@@ -1,0 +1,26 @@
+  <td><%= link_to 'upload image', new_upload_path, :class => 'btn btn-primary '%></td>
+ <table class="table table-hover">
+    <thead>
+      <ul>
+        <tr>
+         </tr>
+      </thead>
+ 
+</table>
+  <%# byebug %>
+  <% @uploads.each do |upload| %>
+      <tr>
+  <div class="col-md-3">
+    <td><%=  image_tag upload.image, class: "img-responsive" %></td>
+          <td><%= link_to 'Destroy', upload_path(upload),
+              method: :delete,
+              data: { confirm: 'are you sure'}, :class => 'btn btn-danger ' %>
+        <td><%= upload.image_content_type %></td>
+        <td><%= upload.image_file_name %></td>
+       
+  </div>
+   </td>
+      </tr>
+    </ul>
+    <% end %>
+ </i>
